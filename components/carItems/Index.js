@@ -6,7 +6,7 @@ import styles from './style';
 
 export default function CarItems(props) {
     // render() {
-const {name , tagLine , tagLineCta , image}= props;
+const {name , tagLine , tagLineCta , image}= props.car;
 
     return (
 
@@ -16,22 +16,25 @@ const {name , tagLine , tagLineCta , image}= props;
             />
             <View style={styles.titles}>
                 <Text style={styles.title}>{name}</Text>
-                <Text style={styles.subtitle}>{tagLine}</Text>
+                <Text style={styles.subtitle}>{tagLine} 
+                {' '}
                <Text style={styles.tagLineCta}>{tagLineCta}</Text>
+               </Text>
             </View>
             <View style={styles.buttonContainer}>
                 <Cars
                     type="primary"
-                    content={"Custom Order"}
+                    // content={"Order Now"}
+                    content = {"Order now"}
                     onPress={() => {
                         console.warn("Custom order pressed")
                     }}
                 />
                 <Cars
                     type="secondary"
-                    content={"Existing Invertory"}
+                    content={"Demo drive"}
                     onPress={() => {
-                        console.warn("Existing Invertory pressed")
+                        console.warn("Demo drive")
                     }}
                 />
 
